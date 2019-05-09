@@ -1,0 +1,15 @@
+{
+  "@@last_modified": "2019-05-07T23:25:22.927406",
+  "title": "地产圈",
+  "@title": {
+    "description": "Title for the application",
+    "type": "text",
+    "placeholders": {}
+  },
+     "subTitle": "来自多伦多地产第一线的最新信息",
+     "@subTitle": {
+       "description": "Subtitle for the application",
+       "type": "text",
+       "placeholders": {}
+     }
+}

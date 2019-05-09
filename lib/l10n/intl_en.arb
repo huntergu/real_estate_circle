@@ -1,0 +1,15 @@
+{
+  "@@last_modified": "2019-05-07T23:25:22.927406",
+  "title": "Real State Circle",
+  "@title": {
+    "description": "Title for the application",
+    "type": "text",
+    "placeholders": {}
+  },
+  "subTitle": "News of Toronto real estate",
+  "@subTitle": {
+    "description": "Subtitle for the application",
+    "type": "text",
+    "placeholders": {}
+    }
+}
