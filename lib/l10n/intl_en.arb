@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2019-05-07T23:25:22.927406",
+  "@@last_modified": "2019-05-12T21:20:30.138064",
   "title": "Real State Circle",
   "@title": {
     "description": "Title for the application",
@@ -11,5 +11,65 @@
     "description": "Subtitle for the application",
     "type": "text",
     "placeholders": {}
-    }
+  },
+  "homePage": "home page",
+  "@homePage": {
+    "description": "The Home Page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "news": "real estate news",
+  "@news": {
+    "description": "The Real Estate News Page",
+    "type": "text",
+    "placeholders": {}
+  },
+  "houseRecomm": "House recommendation",
+  "@houseRecomm": {
+    "description": "House Recommendation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "condoUCRecomm": "Condo under construction",
+  "@condoUCRecomm": {
+    "description": "Condo under construction recommendation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newHouseRecomm": "New House recommendation",
+  "@newHouseRecomm": {
+    "description": "New House Recommendation",
+    "type": "text",
+    "placeholders": {}
+  },
+  "company": "company on the platform",
+  "@company": {
+    "description": "company on the platform",
+    "type": "text",
+    "placeholders": {}
+  },
+  "team": "team on the platform",
+  "@team": {
+    "description": "team on the platform",
+    "type": "text",
+    "placeholders": {}
+  },
+  "agent": "agent on the platform",
+  "@agent": {
+    "description": "agent on the platform",
+    "type": "text",
+    "placeholders": {}
+  },
+  "recFeature": "Real estate circle feature",
+  "@recFeature": {
+    "description": "Real estate circle feature",
+    "type": "text",
+    "placeholders": {}
+  },
+  "magazine": "magazin",
+  "@magazine": {
+    "description": "magazine",
+    "type": "text",
+    "placeholders": {}
+  }
 }

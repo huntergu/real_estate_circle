@@ -20,7 +20,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "agent" : MessageLookupByLibrary.simpleMessage("agent on the platform"),
+    "company" : MessageLookupByLibrary.simpleMessage("company on the platform"),
+    "condoUCRecomm" : MessageLookupByLibrary.simpleMessage("Condo under construction"),
+    "homePage" : MessageLookupByLibrary.simpleMessage("home page"),
+    "houseRecomm" : MessageLookupByLibrary.simpleMessage("House recommendation"),
+    "magazine" : MessageLookupByLibrary.simpleMessage("magazin"),
+    "newHouseRecomm" : MessageLookupByLibrary.simpleMessage("New House recommendation"),
+    "news" : MessageLookupByLibrary.simpleMessage("real estate news"),
+    "recFeature" : MessageLookupByLibrary.simpleMessage("Real estate circle feature"),
     "subTitle" : MessageLookupByLibrary.simpleMessage("News of Toronto real estate"),
+    "team" : MessageLookupByLibrary.simpleMessage("team on the platform"),
     "title" : MessageLookupByLibrary.simpleMessage("Real State Circle")
   };
 }

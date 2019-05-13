@@ -20,7 +20,17 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
+    "agent" : MessageLookupByLibrary.simpleMessage("入驻经纪"),
+    "company" : MessageLookupByLibrary.simpleMessage("入驻企业"),
+    "condoUCRecomm" : MessageLookupByLibrary.simpleMessage("CONDO楼花推介"),
+    "homePage" : MessageLookupByLibrary.simpleMessage("首页"),
+    "houseRecomm" : MessageLookupByLibrary.simpleMessage("二手房源推介"),
+    "magazine" : MessageLookupByLibrary.simpleMessage("杂志"),
+    "newHouseRecomm" : MessageLookupByLibrary.simpleMessage("新HOUSE推介"),
+    "news" : MessageLookupByLibrary.simpleMessage("房产新闻"),
+    "recFeature" : MessageLookupByLibrary.simpleMessage("地产圈特色"),
     "subTitle" : MessageLookupByLibrary.simpleMessage("来自多伦多地产第一线的最新信息"),
-    "title" : MessageLookupByLibrary.simpleMessage("地产圈")
+    "team" : MessageLookupByLibrary.simpleMessage("入驻团队"),
+   "title" : MessageLookupByLibrary.simpleMessage("地产圈")
   };
 }

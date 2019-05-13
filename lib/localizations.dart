@@ -46,6 +46,76 @@ class RecLocalizations {
       desc: 'Subtitle for the application',
     );
   }
+  String get homePage {
+    return Intl.message(
+      'home page',
+      name: 'homePage',
+      desc: 'The Home Page',
+    );
+  }
+  String get news {
+    return Intl.message(
+      'real estate news',
+      name: 'news',
+      desc: 'The Real Estate News Page',
+    );
+  }
+  String get houseRecomm {
+    return Intl.message(
+      'House recommendation',
+      name: 'houseRecomm',
+      desc: 'House Recommendation',
+    );
+  }
+  String get condoUCRecomm {
+    return Intl.message(
+      'Condo under construction',
+      name: 'condoUCRecomm',
+      desc: 'Condo under construction recommendation',
+    );
+  }
+  String get newHouseRecomm {
+    return Intl.message(
+      'New House recommendation',
+      name: 'newHouseRecomm',
+      desc: 'New House Recommendation',
+    );
+  }
+  String get company {
+    return Intl.message(
+      'company on the platform',
+      name: 'company',
+      desc: 'company on the platform',
+    );
+  }
+  String get team {
+    return Intl.message(
+      'team on the platform',
+      name: 'team',
+      desc: 'team on the platform',
+    );
+  }
+  String get agent {
+    return Intl.message(
+      'agent on the platform',
+      name: 'agent',
+      desc: 'agent on the platform',
+    );
+  }
+  String get recFeature {
+    return Intl.message(
+      'Real estate circle feature',
+      name: 'recFeature',
+      desc: 'Real estate circle feature',
+    );
+  }
+  String get magazine {
+    return Intl.message(
+      'magazin',
+      name: 'magazine',
+      desc: 'magazine',
+    );
+  }
 }
 
 class RecLocalizationsDelegate extends LocalizationsDelegate<RecLocalizations> {
