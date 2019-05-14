@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2019-05-12T21:20:30.138064",
+  "@@last_modified": "2019-05-14T00:42:22.794412",
   "title": "Real State Circle",
   "@title": {
     "description": "Title for the application",
@@ -12,9 +12,6 @@
     "type": "text",
     "placeholders": {}
   },
-
-
-
   "homePage": "home page",
   "@homePage": {
     "description": "The Home Page",
@@ -72,6 +69,16 @@
   "magazine": "magazin",
   "@magazine": {
     "description": "magazine",
+    "type": "text",
+    "placeholders": {}
+  },
+  "recommFrom": "recommendation from",
+  "@recommFrom": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "houseRecommTitle": "hose for sale",
+  "@houseRecommTitle": {
     "type": "text",
     "placeholders": {}
   }

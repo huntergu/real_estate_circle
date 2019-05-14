@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:real_estate_circle/localizations.dart';
 
-class ForSale extends StatelessWidget {
+class HouseRecomm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget gridSection = new Flexible(
@@ -17,30 +18,39 @@ class ForSale extends StatelessWidget {
         children: _generateGridItems()
     ));
 
-    return Center(
-      child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Text(
-                'House for sale',
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+    return Container(
+      child: Center(
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: 20.0),
+              Center(
+                child: Text(
+                  RecLocalizations.of(context).houseRecommTitle,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                ),
               ),
-            ),
-            SizedBox(height: 10),
-            Center(
-              child: Text(
-                'from agent and company',
-                style: TextStyle(fontSize: 15, color: Colors.redAccent),
+              SizedBox(height: 10),
+              Center(
+                child: Text(
+                  '(' + RecLocalizations.of(context).recommFrom + ')',
+                  style: TextStyle(fontSize: 15, color: Colors.redAccent),
+                ),
               ),
-            ),
-            SizedBox(height: 5),
-            gridSection,
-
-          ],
+              SizedBox(height: 5),
+              gridSection,
+              SizedBox(height: 20.0),
+            ],
+          ),
         ),
       ),
+      decoration: new BoxDecoration(boxShadow: [
+        new BoxShadow(
+          color: Colors.blueGrey,
+          blurRadius: 20.0,
+        ),
+      ]),
     );
   }
 }

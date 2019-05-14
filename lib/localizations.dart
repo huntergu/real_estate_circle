@@ -9,8 +9,8 @@ import 'l10n/messages_all.dart';
 // directory:
 //
 // flutter pub get
-// flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/main.dart
-// flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n --no-use-deferred-loading lib/main.dart lib/l10n/intl_*.arb
+// flutter pub pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/localizations.dart
+// flutter pub pub run intl_translation:generate_from_arb --output-dir=lib/l10n --no-use-deferred-loading lib/localizations.dart lib/l10n/intl_*.arb
 //
 // The second command generates intl_messages.arb and the third generates
 // messages_all.dart. There's more about this process in
@@ -31,6 +31,9 @@ class RecLocalizations {
   static RecLocalizations of(BuildContext context) {
     return Localizations.of<RecLocalizations>(context, RecLocalizations);
   }
+
+
+///////////// Begin -- String values for the app / menu
 
   String get title {
     return Intl.message(
@@ -116,6 +119,27 @@ class RecLocalizations {
       desc: 'magazine',
     );
   }
+/////////// end -- String values for the app
+
+//////////// Begin -- common string values
+  String get recommFrom {
+    return Intl.message(
+      'recommendation from',
+      name: 'recommFrom',
+    );
+  }
+//////////// end -- common String values
+
+//////////// Begin -- String values for house recommendation page
+  String get houseRecommTitle {
+    return Intl.message(
+      'hose for sale',
+      name: 'houseRecommTitle',
+    );
+  }
+//////////// end -- String values for house recommendation page
+
+
 }
 
 class RecLocalizationsDelegate extends LocalizationsDelegate<RecLocalizations> {

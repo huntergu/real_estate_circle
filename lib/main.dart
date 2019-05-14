@@ -1,85 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:real_estate_circle/forsale/for_sale.dart';
+import 'package:real_estate_circle/pages/house_recomm.dart';
 import 'package:real_estate_circle/localizations.dart';
+import 'package:real_estate_circle/main_drawer.dart';
 
 class RealEstateCircleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Drawer drawer = Drawer(
-        child: ListView(children: <Widget>[
-          UserAccountsDrawerHeader(
-            accountName: const Text('User Name'),
-            accountEmail: const Text('user@example.com'),
-            currentAccountPicture: new CircleAvatar(
-                backgroundColor: Colors.brown, child: new Text('UN')),
-          ),
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Text(RecLocalizations.of(context).homePage),
-            onTap: () => _onListTileTap(context),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.chrome_reader_mode),
-            title: Text(RecLocalizations.of(context).news),
-            onTap: () => _onListTileTap(context),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.account_balance),
-            title: Text(RecLocalizations.of(context).houseRecomm),
-            onTap: () => _onListTileTap(context),
-          ),
-          ListTile(
-            leading: Icon(Icons.business),
-            title: Text(RecLocalizations.of(context).condoUCRecomm),
-            onTap: () => _onListTileTap(context),
-          ),
-          ListTile(
-            leading: Icon(Icons.account_balance),
-            title: Text(RecLocalizations.of(context).newHouseRecomm),
-            onTap: () => _onListTileTap(context),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.local_mall),
-            title: Text(RecLocalizations.of(context).company),
-            onTap: () => _onListTileTap(context),
-          ),
-          ListTile(
-            leading: Icon(Icons.people),
-            title: Text(RecLocalizations.of(context).team),
-            onTap: () => _onListTileTap(context),
-          ),
-          ListTile(
-            leading: Icon(Icons.perm_identity),
-            title: Text(RecLocalizations.of(context).agent),
-            onTap: () => _onListTileTap(context),
-          ),
-          Divider(),
-          ListTile(
-            leading: new Icon(Icons.thumb_up),
-            title: new Text(RecLocalizations.of(context).recFeature),
-            onTap: () => _onListTileTap(context),
-          ),
-          ListTile(
-            leading: Icon(Icons.library_books),
-            title: Text(RecLocalizations.of(context).magazine),
-            onTap: () => _onListTileTap(context),
-          ),
-          Divider(),
-          new ListTile(
-            leading: new Icon(Icons.settings),
-            title: new Text('Settings'),
-            onTap: () => _onListTileTap(context),
-          ),
-          new ListTile(
-            leading: new Icon(Icons.help),
-            title: new Text('Help & feedback'),
-            onTap: () => _onListTileTap(context),
-          )
-    ]));
 
     return Scaffold(
         body: new Center(
@@ -110,7 +37,7 @@ class RealEstateCircleApp extends StatelessWidget {
                   delegate: SliverChildListDelegate([
                     Container(
                       padding: new EdgeInsets.all(10.0),
-                      child: ForSale(),
+                      child: HouseRecomm(),
                     ),
                   ]),
                 ),
@@ -118,25 +45,7 @@ class RealEstateCircleApp extends StatelessWidget {
             ),
           ),
         ),
-        drawer: drawer);
-  }
-
-  _onListTileTap(BuildContext context) {
-    Navigator.of(context).pop();
-    showDialog<Null>(
-      context: context,
-      child: new AlertDialog(
-        title: const Text('Not Implemented'),
-        actions: <Widget>[
-          new FlatButton(
-            child: const Text('OK'),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-        ],
-      ),
-    );
+        drawer: MainDrawer());
   }
 }
 

@@ -25,10 +25,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "condoUCRecomm" : MessageLookupByLibrary.simpleMessage("Condo under construction"),
     "homePage" : MessageLookupByLibrary.simpleMessage("home page"),
     "houseRecomm" : MessageLookupByLibrary.simpleMessage("House recommendation"),
+    "houseRecommTitle" : MessageLookupByLibrary.simpleMessage("hose for sale"),
     "magazine" : MessageLookupByLibrary.simpleMessage("magazin"),
     "newHouseRecomm" : MessageLookupByLibrary.simpleMessage("New House recommendation"),
     "news" : MessageLookupByLibrary.simpleMessage("real estate news"),
     "recFeature" : MessageLookupByLibrary.simpleMessage("Real estate circle feature"),
+    "recommFrom" : MessageLookupByLibrary.simpleMessage("recommendation from"),
     "subTitle" : MessageLookupByLibrary.simpleMessage("News of Toronto real estate"),
     "team" : MessageLookupByLibrary.simpleMessage("team on the platform"),
     "title" : MessageLookupByLibrary.simpleMessage("Real State Circle")
