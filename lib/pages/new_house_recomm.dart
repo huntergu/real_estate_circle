@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/pages/grid_list_img.dart';
 
-class HouseRecomm extends StatelessWidget {
+class NewHouseRecomm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget gridSection = new Flexible(
@@ -28,7 +28,7 @@ class HouseRecomm extends StatelessWidget {
               SizedBox(height: 20.0),
               Center(
                 child: Text(
-                  RecLocalizations.of(context).houseRecommTitle,
+                  RecLocalizations.of(context).newHouseRecomm,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
               ),
@@ -62,11 +62,13 @@ List<Container> _generateGridItems() {
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        GridListImg('https://58realty.so.house/media/Res/W4371817/W4371817-1.jpg?&width=400&height=300&rmode=stretch'),
-        Text('\$2,000,000'),
-        Text('391 Sandhurst Dr, Oakville')
+        GridListImg('https://58realty.so.house/media/NewHouse/THE%20HUMMOCK/hummock1.jpg?&width=400&height=300&rmode=stretch'),
+        Text('Jefferson Homes'),
+        Text('Wickerson Hills'),
+        Text('London')
       ],
     )));
   }
   return gridItems;
 }
+

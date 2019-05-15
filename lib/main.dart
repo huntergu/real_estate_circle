@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:real_estate_circle/pages/house_recomm.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/main_drawer.dart';
+import 'package:real_estate_circle/pages/new_house_recomm.dart';
 
 class RealEstateCircleApp extends StatelessWidget {
   @override
@@ -38,6 +39,14 @@ class RealEstateCircleApp extends StatelessWidget {
                     Container(
                       padding: new EdgeInsets.all(10.0),
                       child: HouseRecomm(),
+                    ),
+                  ]),
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      padding: new EdgeInsets.all(10.0),
+                      child: NewHouseRecomm(),
                     ),
                   ]),
                 ),
