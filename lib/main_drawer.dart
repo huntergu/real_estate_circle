@@ -9,8 +9,8 @@ class MainDrawer extends StatelessWidget {
           UserAccountsDrawerHeader(
             accountName: const Text('User Name'),
             accountEmail: const Text('user@example.com'),
-            currentAccountPicture: new CircleAvatar(
-                backgroundColor: Colors.brown, child: new Text('UN')),
+            currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.brown, child: Text('UN')),
           ),
           ListTile(
             leading: Icon(Icons.home),
@@ -57,8 +57,8 @@ class MainDrawer extends StatelessWidget {
           ),
           Divider(),
           ListTile(
-            leading: new Icon(Icons.thumb_up),
-            title: new Text(RecLocalizations.of(context).recFeature),
+            leading: Icon(Icons.thumb_up),
+            title: Text(RecLocalizations.of(context).recFeature),
             onTap: () => _onListTileTap(context),
           ),
           ListTile(
@@ -67,14 +67,14 @@ class MainDrawer extends StatelessWidget {
             onTap: () => _onListTileTap(context),
           ),
           Divider(),
-          new ListTile(
-            leading: new Icon(Icons.settings),
-            title: new Text('Settings'),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('Settings'),
             onTap: () => _onListTileTap(context),
           ),
-          new ListTile(
-            leading: new Icon(Icons.help),
-            title: new Text('Help & feedback'),
+          ListTile(
+            leading: Icon(Icons.help),
+            title: Text('Help & feedback'),
             onTap: () => _onListTileTap(context),
           )
         ]));
@@ -84,10 +84,10 @@ class MainDrawer extends StatelessWidget {
     Navigator.of(context).pop();
     showDialog<Null>(
       context: context,
-      child: new AlertDialog(
+      child: AlertDialog(
         title: const Text('Not Implemented'),
         actions: <Widget>[
-          new FlatButton(
+          FlatButton(
             child: const Text('OK'),
             onPressed: () {
               Navigator.of(context).pop();

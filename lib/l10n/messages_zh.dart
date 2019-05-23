@@ -29,6 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "magazine" : MessageLookupByLibrary.simpleMessage("杂志"),
     "newHouseRecomm" : MessageLookupByLibrary.simpleMessage("新 HOUSE 推介"),
     "news" : MessageLookupByLibrary.simpleMessage("房产新闻"),
+    "reNews" : MessageLookupByLibrary.simpleMessage("最新地产新闻"),
     "recFeature" : MessageLookupByLibrary.simpleMessage("地产圈特色"),
     "recommFrom" : MessageLookupByLibrary.simpleMessage("来自地产经纪和公司推荐"),
     "subTitle" : MessageLookupByLibrary.simpleMessage("来自多伦多地产第一线的最新信息"),

@@ -3,21 +3,23 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:real_estate_circle/pages/house_recomm.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/main_drawer.dart';
+import 'package:real_estate_circle/pages/new_condo_recomm.dart';
 import 'package:real_estate_circle/pages/new_house_recomm.dart';
+import 'package:real_estate_circle/pages/real_estate_news.dart';
 
 class RealEstateCircleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-        body: new Center(
+        body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: new Container(
+          child: Container(
             child: CustomScrollView(
               slivers: <Widget>[
                 SliverAppBar(
-                  title: new Text(RecLocalizations.of(context).title),
+                  title: Text(RecLocalizations.of(context).title),
                   pinned: true,
                   expandedHeight: 250.0,
                   flexibleSpace: FlexibleSpaceBar(
@@ -37,7 +39,7 @@ class RealEstateCircleApp extends StatelessWidget {
                 SliverList(
                   delegate: SliverChildListDelegate([
                     Container(
-                      padding: new EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(10.0),
                       child: HouseRecomm(),
                     ),
                   ]),
@@ -45,8 +47,24 @@ class RealEstateCircleApp extends StatelessWidget {
                 SliverList(
                   delegate: SliverChildListDelegate([
                     Container(
-                      padding: new EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(10.0),
                       child: NewHouseRecomm(),
+                    ),
+                  ]),
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: NewCondoRecomm(),
+                    ),
+                  ]),
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: RealEstateNews(),
                     ),
                   ]),
                 ),

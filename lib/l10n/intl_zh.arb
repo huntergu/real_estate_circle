@@ -82,5 +82,10 @@
   "@houseRecommTitle": {
     "type": "text",
     "placeholders": {}
-  }
+  },
+     "reNews": "最新地产新闻",
+     "@reNews": {
+       "type": "text",
+       "placeholders": {}
+     }
 }

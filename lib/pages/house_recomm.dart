@@ -5,7 +5,7 @@ import 'package:real_estate_circle/pages/grid_list_img.dart';
 class HouseRecomm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget gridSection = new Flexible(
+    Widget gridSection = Flexible(
         fit: FlexFit.loose,
       flex: 0,
       child:
@@ -45,8 +45,8 @@ class HouseRecomm extends StatelessWidget {
           ),
         ),
       ),
-      decoration: new BoxDecoration(boxShadow: [
-        new BoxShadow(
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
           color: Colors.blueGrey,
           blurRadius: 10.0,
         ),
@@ -58,13 +58,14 @@ class HouseRecomm extends StatelessWidget {
 List<Container> _generateGridItems() {
   List<Container> gridItems = new List();
   for (int i = 0; i < 6; i++) {
-    gridItems.add(new Container(
+    gridItems.add(Container(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         GridListImg('https://58realty.so.house/media/Res/W4371817/W4371817-1.jpg?&width=400&height=300&rmode=stretch'),
         Text('\$2,000,000'),
-        Text('391 Sandhurst Dr, Oakville')
+        Text('391 Sandhurst Dr'),
+        Text('Oakville')
       ],
     )));
   }

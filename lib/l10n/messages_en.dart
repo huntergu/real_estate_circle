@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "magazine" : MessageLookupByLibrary.simpleMessage("magazin"),
     "newHouseRecomm" : MessageLookupByLibrary.simpleMessage("New House recommendation"),
     "news" : MessageLookupByLibrary.simpleMessage("real estate news"),
+    "reNews" : MessageLookupByLibrary.simpleMessage("real estate news"),
     "recFeature" : MessageLookupByLibrary.simpleMessage("Real estate circle feature"),
     "subTitle" : MessageLookupByLibrary.simpleMessage("News of Toronto real estate"),
     "team" : MessageLookupByLibrary.simpleMessage("team on the platform"),

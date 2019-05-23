@@ -71,5 +71,10 @@
     "description": "magazine",
     "type": "text",
     "placeholders": {}
+  },
+  "reNews": "real estate news",
+  "@reNews": {
+    "type": "text",
+    "placeholders": {}
   }
 }

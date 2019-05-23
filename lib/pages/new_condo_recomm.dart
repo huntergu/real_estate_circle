@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/pages/grid_list_img.dart';
 
-class NewHouseRecomm extends StatelessWidget {
+class NewCondoRecomm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget gridSection = Flexible(
-        fit: FlexFit.loose,
+      fit: FlexFit.loose,
       flex: 0,
       child:
       GridView.count(
@@ -28,7 +28,7 @@ class NewHouseRecomm extends StatelessWidget {
               SizedBox(height: 20.0),
               Center(
                 child: Text(
-                  RecLocalizations.of(context).newHouseRecomm,
+                  RecLocalizations.of(context).condoUCRecomm,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
               ),
@@ -62,10 +62,10 @@ List<Container> _generateGridItems() {
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        GridListImg('https://58realty.so.house/media/NewHouse/THE%20HUMMOCK/hummock1.jpg?&width=400&height=300&rmode=stretch'),
-        Text('Jefferson Homes'),
-        Text('Wickerson Hills'),
-        Text('London')
+        GridListImg('https://58realty.so.house/media/Condo/KSquareCondos/ksquare-condo1.jpg?&width=400&height=300&rmode=stretch'),
+        Text('2035 Kennedy Rd'),
+        Text(''),
+        Text(''),
       ],
     )));
   }

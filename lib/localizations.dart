@@ -139,7 +139,14 @@ class RecLocalizations {
   }
 //////////// end -- String values for house recommendation page
 
-
+//////////// Begin -- String values for news  page
+  String get reNews {
+    return Intl.message(
+      'real estate news',
+      name: 'reNews',
+    );
+  }
+//////////// end -- String values for house recommendation page
 }
 
 class RecLocalizationsDelegate extends LocalizationsDelegate<RecLocalizations> {
