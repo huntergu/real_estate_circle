@@ -146,7 +146,25 @@ class RecLocalizations {
       name: 'reNews',
     );
   }
-//////////// end -- String values for house recommendation page
+//////////// end -- String values for news page
+
+//////////// Begin -- String values for agent page
+  String get agentDesc {
+    return Intl.message(
+      'Agent',
+      name: 'agentDesc',
+    );
+  }
+//////////// end -- String values for agent page
+
+//////////// Begin -- String values for company page
+  String get companyDesc {
+    return Intl.message(
+      'Company',
+      name: 'companyDesc',
+    );
+  }
+//////////// end -- String values for company page
 }
 
 class RecLocalizationsDelegate extends LocalizationsDelegate<RecLocalizations> {

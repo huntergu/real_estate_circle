@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:real_estate_circle/pages/agents.dart';
 import 'package:real_estate_circle/pages/house_recomm.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/main_drawer.dart';
 import 'package:real_estate_circle/pages/new_condo_recomm.dart';
 import 'package:real_estate_circle/pages/new_house_recomm.dart';
 import 'package:real_estate_circle/pages/real_estate_news.dart';
+import 'package:flutter/rendering.dart';
 
 class RealEstateCircleApp extends StatelessWidget {
   @override
@@ -68,7 +70,14 @@ class RealEstateCircleApp extends StatelessWidget {
                     ),
                   ]),
                 ),
-              ],
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: Agents(),
+                    ),
+                  ]),
+                ),              ],
             ),
           ),
         ),
@@ -80,6 +89,7 @@ class RealEstateCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+//       debugShowMaterialGrid: true,
       onGenerateTitle: (BuildContext context) =>
           RecLocalizations.of(context).title,
       localizationsDelegates: [

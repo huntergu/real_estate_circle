@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2019-05-23T00:12:11.629171",
+  "@@last_modified": "2019-05-23T21:47:28.093671",
   "title": "Real State Circle",
   "@title": {
     "description": "Title for the application",
@@ -84,6 +84,16 @@
   },
   "reNews": "real estate news",
   "@reNews": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "agentDesc": "Agent",
+  "@agentDesc": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "companyDesc": "Company",
+  "@companyDesc": {
     "type": "text",
     "placeholders": {}
   }

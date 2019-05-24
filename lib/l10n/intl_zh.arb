@@ -87,5 +87,15 @@
      "@reNews": {
        "type": "text",
        "placeholders": {}
-     }
+     },
+        "agentDesc": "您的满意是我们的成功",
+        "@agentDesc": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "companyDesc": "累计几十年房产买卖的宝贵经验",
+        "@companyDesc": {
+          "type": "text",
+          "placeholders": {}
+        }
 }

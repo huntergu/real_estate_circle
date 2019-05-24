@@ -21,7 +21,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "agent" : MessageLookupByLibrary.simpleMessage("agent on the platform"),
+    "agentDesc" : MessageLookupByLibrary.simpleMessage("Agent"),
     "company" : MessageLookupByLibrary.simpleMessage("company on the platform"),
+    "companyDesc" : MessageLookupByLibrary.simpleMessage("Company"),
     "condoUCRecomm" : MessageLookupByLibrary.simpleMessage("Condo under construction"),
     "homePage" : MessageLookupByLibrary.simpleMessage("home page"),
     "houseRecomm" : MessageLookupByLibrary.simpleMessage("House recommendation"),

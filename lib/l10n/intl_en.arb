@@ -76,5 +76,15 @@
   "@reNews": {
     "type": "text",
     "placeholders": {}
-  }
+  },
+     "agentDesc": "Agent",
+     "@agentDesc": {
+       "type": "text",
+       "placeholders": {}
+     },
+     "companyDesc": "Company",
+     "@companyDesc": {
+       "type": "text",
+       "placeholders": {}
+     }
 }

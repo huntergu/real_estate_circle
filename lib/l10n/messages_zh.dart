@@ -21,7 +21,9 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
     "agent" : MessageLookupByLibrary.simpleMessage("入驻经纪"),
+    "agentDesc" : MessageLookupByLibrary.simpleMessage("您的满意是我们的成功"),
     "company" : MessageLookupByLibrary.simpleMessage("入驻企业"),
+    "companyDesc" : MessageLookupByLibrary.simpleMessage("累计几十年房产买卖的宝贵经验"),
     "condoUCRecomm" : MessageLookupByLibrary.simpleMessage("CONDO 楼花推介"),
     "homePage" : MessageLookupByLibrary.simpleMessage("主页"),
     "houseRecomm" : MessageLookupByLibrary.simpleMessage("二手房源推介"),
