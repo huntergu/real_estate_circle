@@ -8,6 +8,7 @@ import 'package:real_estate_circle/pages/new_condo_recomm.dart';
 import 'package:real_estate_circle/pages/new_house_recomm.dart';
 import 'package:real_estate_circle/pages/real_estate_news.dart';
 import 'package:flutter/rendering.dart';
+import 'package:real_estate_circle/pages/teams.dart';
 
 class RealEstateCircleApp extends StatelessWidget {
   @override
@@ -34,7 +35,7 @@ class RealEstateCircleApp extends StatelessWidget {
                               fontSize: 16.0,
                               fontWeight: FontWeight.bold)),
                       background: Image.network(
-                        "https://58realty.so.house/media/background/dichanquan-banner4.jpg",
+                        'https://58realty.so.house/media/background/dichanquan-banner4.jpg',
                         fit: BoxFit.cover,
                       )),
                 ),
@@ -77,7 +78,16 @@ class RealEstateCircleApp extends StatelessWidget {
                       child: Agents(),
                     ),
                   ]),
-                ),              ],
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: Teams(),
+                    ),
+                  ]),
+                ),
+              ],
             ),
           ),
         ),

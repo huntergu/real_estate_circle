@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
-import 'package:real_estate_circle/pages/grid_list_ca_img.dart';
-import 'package:real_estate_circle/pages/grid_list_img.dart';
+import 'package:real_estate_circle/widgets/grid_list_ca_img.dart';
+import 'package:real_estate_circle/widgets/grid_list_img.dart';
 
 class Agents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double aspectRatio = MediaQuery.of(context).orientation == Orientation.landscape ? 0.9 : 0.6;
+
     Widget gridSection = Flexible(
         fit: FlexFit.loose,
       flex: 0,
@@ -14,7 +16,7 @@ class Agents extends StatelessWidget {
           physics: ScrollPhysics(),
           shrinkWrap: true,
         crossAxisCount: 3,
-        childAspectRatio: 0.5,
+        childAspectRatio: aspectRatio,
         mainAxisSpacing: 4.0,
         crossAxisSpacing: 4.0,
         children: _generateGridItems()

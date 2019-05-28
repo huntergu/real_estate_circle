@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class GridListImg extends StatelessWidget {
   final String img;
@@ -10,7 +10,7 @@ class GridListImg extends StatelessWidget {
         margin: const EdgeInsets.all(20.0),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10.0),
-          child: Image.network(this.img),
+          child: Image.network(this.img, fit: BoxFit.cover),
         )
     ));
   }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:path/path.dart';
 import 'package:real_estate_circle/localizations.dart';
-import 'package:real_estate_circle/pages/grid_list_img.dart';
+import 'package:real_estate_circle/widgets/grid_list_img.dart';
 
 class HouseRecomm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    int numberOfColumns = MediaQuery.of(context).orientation == Orientation.landscape ? 3 : 2;
     Widget gridSection = Flexible(
         fit: FlexFit.loose,
       flex: 0,
@@ -12,7 +14,7 @@ class HouseRecomm extends StatelessWidget {
       GridView.count(
           physics: ScrollPhysics(),
           shrinkWrap: true,
-        crossAxisCount: 2,
+        crossAxisCount: numberOfColumns,
         childAspectRatio: 1.0,
         mainAxisSpacing: 4.0,
         crossAxisSpacing: 4.0,
