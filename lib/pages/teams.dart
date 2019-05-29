@@ -2,30 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 
 class Teams extends StatelessWidget {
+  List imgs = ['https://58realty.so.house/media/realtyTeam/nustream.jpg',
+    'https://58realty.so.house/media/realtyTeam/victoria-banner-600.jpg',
+    'https://58realty.so.house/media/realtyTeam/Michelle-Peng600.jpg',
+    'https://58realty.so.house/media/realtyTeam/one-team-banner9.jpg',
+  ];
+  List names = ['新趋势地产专业团队','Victoria 售房团队','ActionTeam 行动组',
+    'The One Team 团队'];
+
   @override
   Widget build(BuildContext context) {
-    double fs = MediaQuery.of(context).orientation == Orientation.landscape ? 30 : 20;
+    double aspectRatio =
+    MediaQuery.of(context).orientation == Orientation.landscape ? 1.2 : 1.2;
+    double fs = MediaQuery.of(context).orientation == Orientation.landscape ? 15 : 20;
+    int numberOfColumn = MediaQuery.of(context).orientation == Orientation.landscape ? 3 : 1;
 
-    Widget listSection = Flexible(
+    Widget gridSection = Flexible(
         fit: FlexFit.loose,
         flex: 0,
-        child: ListView.separated(
+        child: GridView.count(
             physics: ScrollPhysics(),
             shrinkWrap: true,
-            itemCount: 4,
-            itemBuilder: (context, i) => Container(
-                    child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                        margin: EdgeInsets.only(left: 20.0, right: 20.0),
-                        child: Image.network(
-                                'https://58realty.so.house/media/realtyTeam/nustream.jpg', fit: BoxFit.fitWidth)),
-                    SizedBox(height: 16.0),
-                    Text('新趋势地产专业团队', style: TextStyle(fontWeight: FontWeight.bold, fontSize: fs))
-                  ],
-                )),
-            separatorBuilder: (context, i) => SizedBox(height: 40.0)));
+            crossAxisCount: numberOfColumn,
+            childAspectRatio: aspectRatio,
+            mainAxisSpacing: 4.0,
+            crossAxisSpacing: 4.0,
+            children: _generateGridItems(this.imgs, this.names, fs)));
 
     return Container(
       child: Center(
@@ -42,7 +44,7 @@ class Teams extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20.0),
-              listSection,
+              gridSection,
               SizedBox(height: 20.0),
             ],
           ),
@@ -57,3 +59,24 @@ class Teams extends StatelessWidget {
     );
   }
 }
+
+List<Container> _generateGridItems(List imgs, List names, double fs) {
+  List<Container> gridItems = new List();
+  for (int i = 0; i < imgs.length; i++) {
+    gridItems.add(Container(
+        margin: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+                margin: EdgeInsets.only(left: 20.0, right: 20.0),
+                child: Image.network(
+                    imgs[i], fit: BoxFit.fitWidth)),
+            SizedBox(height: 16.0),
+            Text(names[i], style: TextStyle(fontWeight: FontWeight.bold, fontSize: fs))
+          ],
+        )));
+  }
+  return gridItems;
+}
+

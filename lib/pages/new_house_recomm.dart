@@ -3,9 +3,21 @@ import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
 
 class NewHouseRecomm extends StatelessWidget {
+  List imgs = ['https://58realty.so.house/media/NewHouse/THE%20HUMMOCK/hummock1.jpg?&width=400&height=300&rmode=stretch',
+    'https://58realty.so.house/media/NewHouse/THE%20ASCENT/ascent1.jpg?&width=400&height=300&rmode=stretch',
+    'https://58realty.so.house/media/NewHouse/THE%20HILLOCK/THE-HILLOCK-1.jpg?&width=400&height=300&rmode=stretch',
+    'https://58realty.so.house/media/NewHouse/THE%20DRUMLIN/Drumlin-1.jpg?&width=400&height=300&rmode=stretch',
+    'https://58realty.so.house/media/NewHouse/THE%20PROMINENCE/THE-PROMINENCE-1.jpg?&width=400&height=300&rmode=stretch',
+    'https://58realty.so.house/media/NewHouse/THE%20HILLSIDE/THE-HILLSIDE-1.jpg?&width=400&height=300&rmode=stretch'];
+  List addresses = ['Jefferson Homes Wickerson Hills , London','Wickerson Hills , London','Jefferson Homes Wickerson Hills , London',
+  'Wickerson Hills , London','Wickerson Hills , London','Wickerson Hills , London'];
+
   @override
   Widget build(BuildContext context) {
     int numberOfColumns = MediaQuery.of(context).orientation == Orientation.landscape ? 3 : 2;
+    double aspectRatio =
+    MediaQuery.of(context).orientation == Orientation.landscape ? 0.7 : 0.7;
+
     Widget gridSection = Flexible(
         fit: FlexFit.loose,
       flex: 0,
@@ -14,10 +26,10 @@ class NewHouseRecomm extends StatelessWidget {
           physics: ScrollPhysics(),
           shrinkWrap: true,
         crossAxisCount: numberOfColumns,
-        childAspectRatio: 1,
+        childAspectRatio: aspectRatio,
         mainAxisSpacing: 4.0,
         crossAxisSpacing: 4.0,
-        children: _generateGridItems()
+        children: _generateGridItems(this.imgs, this.addresses)
     ));
 
     return Container(
@@ -56,17 +68,23 @@ class NewHouseRecomm extends StatelessWidget {
   }
 }
 
-List<Container> _generateGridItems() {
+List<Container> _generateGridItems(List imgs, List addresses) {
   List<Container> gridItems = new List();
-  for (int i = 0; i < 6; i++) {
+  for (int i = 0; i < imgs.length; i++) {
     gridItems.add(Container(
+        margin: EdgeInsets.symmetric(vertical: 0, horizontal: 5),
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        GridListImg('https://58realty.so.house/media/NewHouse/THE%20HUMMOCK/hummock1.jpg?&width=400&height=300&rmode=stretch'),
-        Text('Jefferson Homes'),
-        Text('Wickerson Hills'),
-        Text('London')
+        GridListImg(imgs[i]),
+        SizedBox(height: 10.0),
+        Flexible(
+            fit: FlexFit.loose,
+            child: Text(
+              addresses[i],
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            )),
       ],
     )));
   }

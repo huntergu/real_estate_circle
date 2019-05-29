@@ -2,18 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/widgets/grid_list_ca_img.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
+import 'package:real_estate_circle/widgets/grid_list_img_clip.dart';
 
-class Agents extends StatelessWidget {
-  List imgs = ['https://58realty.so.house/media/agency/joe-300.jpg',
-    'https://58realty.so.house/media/agency/Ronald-huang-new-400.jpg',
-    'https://58realty.so.house/media/agency/michael-wang-photo-300.jpg',
-    'https://58realty.so.house/media/agency/jeff-photo-400.jpg',
-    'https://58realty.so.house/media/agency/ting-photo-new.jpg',
-    'https://58realty.so.house/media/agency/jessica-photo2.jpg'];
-  List names = ['Joe Wang','Ronald Huang','Michael Wang',
-    'Jeff Zhao','TING','Jessica Shen'];
-  List tags = ['精做西部地产','大多区资深地产经纪','地产经纪',
-    '资深地产投资专家','地产经纪 (巴里 Barrie 地区)','伦敦地产 London'];
+class Companies extends StatelessWidget {
+  List imgs = ['https://58realty.so.house/media/about/nu.jpg?&width=128&height=128&rmode=stretch',
+    'https://58realty.so.house/media/about/landmark-logo.png?&width=128&height=128&rmode=stretch',
+    'https://58realty.so.house/media/about/baystreet-logo.png?&width=128&height=128&rmode=stretch',
+    'https://58realty.so.house/media/about/vc-logo.png?&width=128&height=128&rmode=stretch',
+    'https://58realty.so.house/media/about/dreamhome-logo.png?&width=128&height=128&rmode=stretch',
+    'https://58realty.so.house/media/about/peaceland-logo.png?&width=128&height=128&rmode=stretch'];
+  List names = ['新趋势地产','大鹏地产','金融街地产',
+    'VC 地产','枫叶地产','君安地产'];
+  List tags = ['让天下没有难卖的房！','HomeLife Landmark Realty Inc.','','为每一位有真正需要的客人提供优质服务 ...','','君安地产'];
+
   @override
   Widget build(BuildContext context) {
     double aspectRatio =
@@ -41,14 +42,14 @@ class Agents extends StatelessWidget {
               SizedBox(height: 20.0),
               Center(
                 child: Text(
-                  RecLocalizations.of(context).agent,
+                  RecLocalizations.of(context).company,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
               ),
               SizedBox(height: 30),
               Center(
                 child: Text(
-                  RecLocalizations.of(context).agentDesc,
+                  RecLocalizations.of(context).companyDesc,
                   style: TextStyle(fontSize: 15, color: Colors.black38),
                 ),
               ),
@@ -77,22 +78,23 @@ List<Container> _generateGridItems(List imgs, List names, List tags) {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-                child: GridListCircleAvatarImg(
+                child: GridListImgClip(
                     imgs[i])),
-            Flexible(
-                fit: FlexFit.loose,
-                child: Text(
-                  names[i],
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                )),
-            SizedBox(height: 10,),
+        Text(
+          names[i],
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
+            SizedBox(height: 5,),
             Flexible(
                 fit: FlexFit.loose,
                 child: Text(
                   tags[i],
+                  style: TextStyle(fontSize: 16, color: Colors.black45),
                   textAlign: TextAlign.center,
-                ))
+
+                )),
+            Text('Read More', style: TextStyle(color: Colors.purple),)
           ],
         )));
   }

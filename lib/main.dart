@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:real_estate_circle/pages/agents.dart';
+import 'package:real_estate_circle/pages/companies.dart';
 import 'package:real_estate_circle/pages/house_recomm.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/main_drawer.dart';
@@ -84,6 +85,14 @@ class RealEstateCircleApp extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(10.0),
                       child: Teams(),
+                    ),
+                  ]),
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: Companies(),
                     ),
                   ]),
                 ),

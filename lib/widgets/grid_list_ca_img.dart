@@ -6,11 +6,13 @@ class GridListCircleAvatarImg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double radius = MediaQuery.of(context).orientation == Orientation.landscape ? 1 : 0.5;
+    double imgWidth = 180;
     return
          Container(
           margin: EdgeInsets.all(10.0),
-            width: 180.0,
-            height: 120.0,
+            width: imgWidth,
+            height: imgWidth * radius,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: DecorationImage(
