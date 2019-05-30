@@ -165,6 +165,79 @@ class RecLocalizations {
     );
   }
 //////////// end -- String values for company page
+
+//////////// Begin -- String values for feature page
+  String get recDesc {
+    return Intl.message(
+      'rec desc',
+      name: 'recDesc',
+    );
+  }
+  String get recF1 {
+    return Intl.message(
+      'rec feature 1',
+      name: 'recF1',
+    );
+  }
+  String get recF2 {
+    return Intl.message(
+      'rec feature 2',
+      name: 'recF2',
+    );
+  }
+  String get recF3 {
+    return Intl.message(
+      'rec feature 3',
+      name: 'recF3',
+    );
+  }
+  String get recSub {
+    return Intl.message(
+      'rec feature Sub title',
+      name: 'recSub',
+    );
+  }
+
+//////////// end -- String values for feature page
+
+/////////// Begin - String values for magazine page
+  String get magApply {
+    return Intl.message(
+      'magazin application',
+      name: 'magApply',
+    );
+  }
+
+  String get magApplySub {
+    return Intl.message(
+      'magazin application sub title',
+      name: 'magApplySub',
+    );
+  }
+  String get magApplyButton {
+    return Intl.message(
+      'magazin application button',
+      name: 'magApplyButton',
+    );
+  }
+//////////// end -- String values for magazine page
+
+/////////// Begin - String values for foot
+  String get footPolicy {
+    return Intl.message(
+      'page foot policy',
+      name: 'footPolicy',
+    );
+  }
+
+  String get footMark {
+    return Intl.message(
+      'foot Mark',
+      name: 'footMark',
+    );
+  }
+//////////// end -- String values for foot
+
 }
 
 class RecLocalizationsDelegate extends LocalizationsDelegate<RecLocalizations> {

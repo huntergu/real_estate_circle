@@ -97,5 +97,55 @@
         "@companyDesc": {
           "type": "text",
           "placeholders": {}
-        }
+        },
+           "recDesc": "房东网，房东群，公众号汇集数万的投资人群友和用户，互相学习，共同进步。一切透明的社区文化，是优秀的商家和企业服务精准优质客户的最佳平台。商家和客户，先做群友，再做生意，省心放心。",
+           "@recDesc": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "recF1": "活跃的投资人社区",
+           "@recF1": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "recF2": "强大的口碑和监督",
+           "@recF2": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "recF3": "省心放心的平台",
+           "@recF3": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "recSub": "致力于为地产投资人社区提供最优质的地产信息和服务",
+           "@recSub": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "magApply": "房东网地产杂志申请",
+           "@magApply": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "magApplySub": "我们会给您Email信息丰富印刷精美的房东网地产杂志!",
+           "@magApplySub": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "magApplyButton": "去填申请表",
+           "@magApplyButton": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "footPolicy": "POLICY",
+           "@footPolicy": {
+             "type": "text",
+             "placeholders": {}
+           },
+           "footMark": "© 2019, made with favorite by 58fd.ca for a better web.",
+           "@footMark": {
+             "type": "text",
+             "placeholders": {}
+           }
 }

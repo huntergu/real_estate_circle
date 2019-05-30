@@ -86,5 +86,55 @@
      "@companyDesc": {
        "type": "text",
        "placeholders": {}
-     }
+     },
+        "recDesc": "rec desc",
+        "@recDesc": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "recF1": "rec feature 1",
+        "@recF1": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "recF2": "rec feature 2",
+        "@recF2": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "recF3": "rec feature 3",
+        "@recF3": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "recSub": "rec feature Sub title",
+        "@recSub": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "magApply": "magazin application",
+        "@magApply": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "magApplySub": "magazin application sub title",
+        "@magApplySub": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "magApplyButton": "magazin application button",
+        "@magApplyButton": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "footPolicy": "page foot policy",
+        "@footPolicy": {
+          "type": "text",
+          "placeholders": {}
+        },
+        "footMark": "foot Mark",
+        "@footMark": {
+          "type": "text",
+          "placeholders": {}
+        }
 }

@@ -9,6 +9,7 @@ import 'package:real_estate_circle/pages/new_condo_recomm.dart';
 import 'package:real_estate_circle/pages/new_house_recomm.dart';
 import 'package:real_estate_circle/pages/real_estate_news.dart';
 import 'package:flutter/rendering.dart';
+import 'package:real_estate_circle/pages/rec_feature.dart';
 import 'package:real_estate_circle/pages/teams.dart';
 
 class RealEstateCircleApp extends StatelessWidget {
@@ -93,6 +94,14 @@ class RealEstateCircleApp extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(10.0),
                       child: Companies(),
+                    ),
+                  ]),
+                ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: RecFeatures(),
                     ),
                   ]),
                 ),
