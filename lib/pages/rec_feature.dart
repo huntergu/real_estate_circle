@@ -124,7 +124,34 @@ class RecFeatures extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 60.0),
+                SizedBox(height: 100.0),
+                Center(
+                  child: Text(
+                    RecLocalizations.of(context).magApply,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Center(
+                  child: Text(
+                    RecLocalizations.of(context).magApplySub,
+                    style: TextStyle(fontSize: 20, color: Colors.black38),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Center(
+                  child: RaisedButton(
+                    child: Text(RecLocalizations.of(context).magApplyButton, style: TextStyle(color: Colors.white),),
+                    color: Colors.purple,
+                    elevation: 4.0,
+                    splashColor: Colors.blueGrey,
+                    onPressed: () {
+                      // Perform some action
+                    },
+                  ),
+                ),
+                SizedBox(height: 20.0),
               ],
             ),
           ),
