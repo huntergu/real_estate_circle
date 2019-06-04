@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
-import 'package:real_estate_circle/widgets/money_format.dart';
+import 'package:real_estate_circle/utils/money_format.dart';
 
 class HouseRecomm extends StatelessWidget {
   List imgs = ['https://58realty.so.house/media/Res/W4371817/W4371817-1.jpg?&width=400&height=300&rmode=stretch',

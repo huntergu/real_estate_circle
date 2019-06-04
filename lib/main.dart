@@ -134,7 +134,40 @@ class RealEstateCircle extends StatelessWidget {
       // will only find the app's Localizations widget if its
       // context is a child of the app.
       home: RealEstateCircleApp(),
+      routes: <String, WidgetBuilder>{
+//        '/' : (context) => RealEstateCircleApp(),
+        '/news' : (context) => RealEstateNews(),
+        '/house' : (context) => HouseRecomm(),
+        '/condo' : (context) => NewCondoRecomm(),
+        '/newhouse' : (context) => NewHouseRecomm(),
+        '/company' : (context) => Companies(),
+        '/team' : (context) => Teams(),
+        '/agent' : (context) => Agents(),
+        '/feature' : (context) => RecFeatures(),
+        '/setting' : (context) => Settings(),
+        '/help' : (context) => Helps(),
+      },
     );
+  }
+}
+
+class Settings extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Settings'),
+    );
+
+  }
+}
+
+class Helps extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Helps'),
+    );
+
   }
 }
 

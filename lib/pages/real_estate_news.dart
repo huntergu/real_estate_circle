@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/widgets/grid_list_img_clip.dart';
-import 'package:real_estate_circle/widgets/string_format.dart';
+import 'package:real_estate_circle/utils/string_format.dart';
 
 class RealEstateNews extends StatelessWidget {
   List imgs = ['https://58realty.so.house/media/portfolio/%E5%B8%82%E5%9C%BA%E5%8A%A8%E6%80%81.jpg?&width=115&height=90&rmode=stretch',
