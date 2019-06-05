@@ -3,6 +3,8 @@ import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
 
 class NewCondoRecomm extends StatelessWidget {
+  static const routeName = '/condo';
+
   List imgs = ['https://58realty.so.house/media/Condo/KSquareCondos/ksquare-condo1.jpg?&width=400&height=300&rmode=stretch',
     'https://58realty.so.house/media/Condo/uplus/UPLUS-28-1920.jpg?&width=400&height=300&rmode=stretch',
     'https://58realty.so.house/media/Condo/XOCondos/photo1.gif?&width=400&height=300&rmode=stretch',

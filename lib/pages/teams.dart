@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 
 class Teams extends StatelessWidget {
+  static const routeName = 'team';
+
   List imgs = ['https://58realty.so.house/media/realtyTeam/nustream.jpg',
     'https://58realty.so.house/media/realtyTeam/victoria-banner-600.jpg',
     'https://58realty.so.house/media/realtyTeam/Michelle-Peng600.jpg',

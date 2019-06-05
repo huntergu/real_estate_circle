@@ -5,6 +5,8 @@ import 'package:real_estate_circle/widgets/grid_list_img.dart';
 import 'package:real_estate_circle/widgets/grid_list_img_clip.dart';
 
 class Companies extends StatelessWidget {
+  static const routeName = '/company';
+
   List imgs = ['https://58realty.so.house/media/about/nu.jpg?&width=128&height=128&rmode=stretch',
     'https://58realty.so.house/media/about/landmark-logo.png?&width=128&height=128&rmode=stretch',
     'https://58realty.so.house/media/about/baystreet-logo.png?&width=128&height=128&rmode=stretch',

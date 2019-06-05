@@ -4,6 +4,8 @@ import 'package:real_estate_circle/widgets/grid_list_ca_img.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
 
 class Agents extends StatelessWidget {
+  static const routeName = '/agent';
+
   List imgs = ['https://58realty.so.house/media/agency/joe-300.jpg',
     'https://58realty.so.house/media/agency/Ronald-huang-new-400.jpg',
     'https://58realty.so.house/media/agency/michael-wang-photo-300.jpg',

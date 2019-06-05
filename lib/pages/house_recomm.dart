@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
+import 'package:real_estate_circle/pages/house_recomm_detail.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
 import 'package:real_estate_circle/utils/money_format.dart';
 
 class HouseRecomm extends StatelessWidget {
+  static const routeName = '/house';
+
   List imgs = ['https://58realty.so.house/media/Res/W4371817/W4371817-1.jpg?&width=400&height=300&rmode=stretch',
     'https://58realty.so.house/media/Condo/C4358459/C4358459-1.jpg?&width=400&height=300&rmode=stretch',
     'https://58realty.so.house/media/Commercial/C4381500/C4381500-2.jpg?&width=400&height=300&rmode=stretch',
@@ -29,7 +32,7 @@ class HouseRecomm extends StatelessWidget {
         childAspectRatio: aspectRatio,
         mainAxisSpacing: 0.0,
         crossAxisSpacing: 0.0,
-        children: _generateGridItems(this.imgs, this.prices, this.addresses)
+        children: _generateGridItems(context, this.imgs, this.prices, this.addresses)
     ));
 
     return Container(
@@ -68,27 +71,34 @@ class HouseRecomm extends StatelessWidget {
   }
 }
 
-List<Container> _generateGridItems(List imgs, List prices, List addresses) {
-  List<Container> gridItems = new List();
+List<GestureDetector> _generateGridItems(BuildContext context, List imgs, List prices, List addresses) {
+  List<GestureDetector> gridItems = new List();
   for (int i = 0; i < imgs.length; i++) {
-    gridItems.add(Container(
-        margin: EdgeInsets.symmetric(vertical: 0, horizontal: 5),
-        child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        GridListImg(imgs[i]),
-        SizedBox(height: 10.0),
-        Text(MoneyFormat.formatMoney(prices[i], 0), style: TextStyle(fontSize: 20, color: Colors.purple, fontWeight: FontWeight.bold),),
-        SizedBox(height: 10.0),
-        Flexible(
-            fit: FlexFit.loose,
-            child: Text(
-              addresses[i],
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
+    gridItems.add(
+      GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, HouseRecommDetail.routeName, arguments: i.toString());
+        },
+        child: Container(
+            margin: EdgeInsets.symmetric(vertical: 0, horizontal: 5),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                GridListImg(imgs[i]),
+                SizedBox(height: 10.0),
+                Text(MoneyFormat.formatMoney(prices[i], 0), style: TextStyle(fontSize: 20, color: Colors.purple, fontWeight: FontWeight.bold),),
+                SizedBox(height: 10.0),
+                Flexible(
+                    fit: FlexFit.loose,
+                    child: Text(
+                      addresses[i],
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    )),
+              ],
             )),
-      ],
-    )));
+      )
+        );
   }
   return gridItems;
 }

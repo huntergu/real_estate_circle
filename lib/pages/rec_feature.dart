@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 
 class RecFeatures extends StatelessWidget {
+  static const routeName = '/feature';
+
   @override
   Widget build(BuildContext context) {
     double aspectRatio =

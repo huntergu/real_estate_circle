@@ -4,6 +4,8 @@ import 'package:real_estate_circle/widgets/grid_list_img_clip.dart';
 import 'package:real_estate_circle/utils/string_format.dart';
 
 class RealEstateNews extends StatelessWidget {
+  static const routeName = '/news';
+
   List imgs = ['https://58realty.so.house/media/portfolio/%E5%B8%82%E5%9C%BA%E5%8A%A8%E6%80%81.jpg?&width=115&height=90&rmode=stretch',
     'https://58realty.so.house/media/portfolio/expert-1.jpg?&width=115&height=90&rmode=stretch',
     'https://58realty.so.house/media/portfolio/new4.PNG?&width=115&height=90&rmode=stretch',

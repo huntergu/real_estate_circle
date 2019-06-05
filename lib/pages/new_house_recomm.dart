@@ -3,6 +3,8 @@ import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
 
 class NewHouseRecomm extends StatelessWidget {
+  static const routeName = '/newhouse';
+
   List imgs = ['https://58realty.so.house/media/NewHouse/THE%20HUMMOCK/hummock1.jpg?&width=400&height=300&rmode=stretch',
     'https://58realty.so.house/media/NewHouse/THE%20ASCENT/ascent1.jpg?&width=400&height=300&rmode=stretch',
     'https://58realty.so.house/media/NewHouse/THE%20HILLOCK/THE-HILLOCK-1.jpg?&width=400&height=300&rmode=stretch',

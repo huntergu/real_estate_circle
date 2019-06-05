@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:real_estate_circle/main_page.dart';
 import 'package:real_estate_circle/pages/agents.dart';
 import 'package:real_estate_circle/pages/companies.dart';
 import 'package:real_estate_circle/pages/house_recomm.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/main_drawer.dart';
+import 'package:real_estate_circle/pages/house_recomm_detail.dart';
 import 'package:real_estate_circle/pages/new_condo_recomm.dart';
 import 'package:real_estate_circle/pages/new_house_recomm.dart';
 import 'package:real_estate_circle/pages/real_estate_news.dart';
@@ -13,13 +15,12 @@ import 'package:real_estate_circle/pages/rec_feature.dart';
 import 'package:real_estate_circle/pages/teams.dart';
 
 class RealEstateCircleApp extends StatelessWidget {
+  static const routeName= '/';
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
         body: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
           child: Container(
             child: CustomScrollView(
               slivers: <Widget>[
@@ -29,8 +30,8 @@ class RealEstateCircleApp extends StatelessWidget {
                   expandedHeight: 250.0,
                   flexibleSpace: FlexibleSpaceBar(
                       centerTitle: true,
+                      titlePadding: EdgeInsetsDirectional.only(top: 60, bottom: 50),
                       title: Text(
-                          '\r\n\r\n\r\n\r\n\r\n' +
                               RecLocalizations.of(context).subTitle,
                           style: TextStyle(
                               color: Colors.white,
@@ -134,24 +135,36 @@ class RealEstateCircle extends StatelessWidget {
       // will only find the app's Localizations widget if its
       // context is a child of the app.
       home: RealEstateCircleApp(),
+      onGenerateRoute: (settings) {
+        if (settings.name == HouseRecommDetail.routeName) {
+          final String id = settings.arguments;
+          return MaterialPageRoute(
+            builder: (context) {
+              return HouseRecommDetail(id: id);
+            }
+          );
+        }
+      },
       routes: <String, WidgetBuilder>{
 //        '/' : (context) => RealEstateCircleApp(),
-        '/news' : (context) => RealEstateNews(),
-        '/house' : (context) => HouseRecomm(),
-        '/condo' : (context) => NewCondoRecomm(),
-        '/newhouse' : (context) => NewHouseRecomm(),
-        '/company' : (context) => Companies(),
-        '/team' : (context) => Teams(),
-        '/agent' : (context) => Agents(),
-        '/feature' : (context) => RecFeatures(),
-        '/setting' : (context) => Settings(),
-        '/help' : (context) => Helps(),
+        '/news' : (context) => MainPage(RealEstateNews()),
+        '/house' : (context) => MainPage(HouseRecomm()),
+        '/condo' : (context) => MainPage(NewCondoRecomm()),
+        '/newhouse' : (context) => MainPage(NewHouseRecomm()),
+        '/company' : (context) => MainPage(Companies()),
+        '/team' : (context) => MainPage(Teams()),
+        '/agent' : (context) => MainPage(Agents()),
+        '/feature' : (context) => MainPage(RecFeatures()),
+        '/magazine' : (context) => MainPage(RecFeatures()),
+        '/setting' : (context) => MainPage(Settings()),
+        '/help' : (context) => MainPage(Helps()),
       },
     );
   }
 }
 
 class Settings extends StatelessWidget {
+  static const routeName = '/setting';
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -162,6 +175,7 @@ class Settings extends StatelessWidget {
 }
 
 class Helps extends StatelessWidget {
+  static const routeName = '/help';
   @override
   Widget build(BuildContext context) {
     return Center(
