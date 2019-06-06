@@ -3,11 +3,27 @@ import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
 import 'package:real_estate_circle/utils/money_format.dart';
 
-class HouseRecommDetail extends StatelessWidget {
+class HouseRecommDetail extends StatefulWidget {
   static const routeName = '/housedetail';
   final String id;
 
   HouseRecommDetail({Key key, @required this.id}) : super(key: key);
+
+  @override
+  _HouseRecommDetailState createState() => _HouseRecommDetailState();
+}
+
+class _HouseRecommDetailState extends State<HouseRecommDetail> with SingleTickerProviderStateMixin {
+  TabController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = TabController(
+      length: 2,
+      vsync: this,
+    );
+  }
 
   List imgs = [
   ];
@@ -34,6 +50,8 @@ class HouseRecommDetail extends StatelessWidget {
             children: _generateGridItems(
                 context, this.imgs, this.addresses)));
 
+
+
     return Scaffold(
       body: Center(
         child: Container(
@@ -46,7 +64,7 @@ class HouseRecommDetail extends StatelessWidget {
                 flexibleSpace: FlexibleSpaceBar(
                     centerTitle: false,
                     title: Text(
-                        '391 Sandhurst Dr \r\nOakville L6L4L1',
+                        '\r\n\r\n391 Sandhurst Dr \r\nOakville L6L4L1',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 12.0,
@@ -57,15 +75,24 @@ class HouseRecommDetail extends StatelessWidget {
                       'https://58realty.so.house/media/Res/W4371817/W4371817-1.jpg',
                       fit: BoxFit.cover,
                     )),
+                bottom: TabBar(
+                  tabs: <Widget>[
+                    Tab(text: 'Gallery',),
+                    Tab(text: 'Detail',)
+                  ],
+                  controller: controller,
+                ),
               ),
-              SliverList(
-                delegate: SliverChildListDelegate([
-                  Container(
-                    padding: EdgeInsets.all(10.0),
-                    child: Text(''),
-                  ),
-                ]),
-              ),
+              SliverFillRemaining(
+                child: TabBarView(
+                  controller: controller,
+                  children: <Widget>[
+                    Center(child: Text('Gallery'),),
+                    Center(child: Text('Detail'),),
+                  ],
+                )
+              )
+
             ],
           ),
         ),

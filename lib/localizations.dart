@@ -128,6 +128,22 @@ class RecLocalizations {
       name: 'recommFrom',
     );
   }
+
+  String get gallery {
+    return Intl.message(
+      'gallery',
+      name: 'gallery',
+    );
+  }
+
+  String get detailInfo {
+    return Intl.message(
+      'detail information',
+      name: 'detailInfo',
+    );
+  }
+
+
 //////////// end -- common String values
 
 //////////// Begin -- String values for house recommendation page
@@ -137,6 +153,8 @@ class RecLocalizations {
       name: 'houseRecommTitle',
     );
   }
+
+
 //////////// end -- String values for house recommendation page
 
 //////////// Begin -- String values for news  page
@@ -237,6 +255,8 @@ class RecLocalizations {
     );
   }
 //////////// end -- String values for foot
+
+
 
 }
 
