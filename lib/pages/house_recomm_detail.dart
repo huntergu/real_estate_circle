@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:real_estate_circle/localizations.dart';
-import 'package:real_estate_circle/widgets/grid_list_img.dart';
-import 'package:real_estate_circle/utils/money_format.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
+import 'package:flutter/material.dart';
+import 'package:real_estate_circle/pages/hrd/hrd_detail.dart';
 
 import 'hrd/hrd_gallery.dart';
 
@@ -39,6 +37,7 @@ class _HouseRecommDetailState extends State<HouseRecommDetail>
     'https://58realty.so.house/media/Res/W4371817/W4371817-1.jpg',
     'https://58realty.so.house/media/Res/W4371817/W4371817-2.jpg',
     'https://58realty.so.house/media/Res/W4371817/W4371817-3.jpg',
+/*
     'https://58realty.so.house/media/Res/W4371817/W4371817-4.jpg',
     'https://58realty.so.house/media/Res/W4371817/W4371817-5.jpg',
     'https://58realty.so.house/media/Res/W4371817/W4371817-6.jpg',
@@ -56,7 +55,36 @@ class _HouseRecommDetailState extends State<HouseRecommDetail>
     'https://58realty.so.house/media/Res/W4371817/W4371817-18.jpg',
     'https://58realty.so.house/media/Res/W4371817/W4371817-19.jpg',
     'https://58realty.so.house/media/Res/W4371817/W4371817-20.jpg',
+*/
   ];
+
+  // position 2 = format: 0 = currency, 1 = number, 2 = integer, 999 = link,
+
+  List<List<String>> features = [
+    ['Washrooms', '6'],
+    ['Bedrooms','4'],
+    ['Basement','Fin W/O'],
+    ['CentralVac','Y'],
+    ['Lot Depth','147.08', '1'],
+    ['Lot Front','75', '2'],
+    ['Days On Market','42', '2'],
+    ['Heat Source','Gas'],
+    ['Garage Spaces',''],
+    ['Garage Type','Attached'],
+    ['Dinning Room','Coffered Ceiling'],
+    ['Living Room','Gas Fireplace, 3.56 x 3.89'],
+    ['Approx Square Footage', ''],
+    ['Taxes','4856', '0'],
+    ['Type','Detached'],
+    ['Community',''],
+    ['Air Conditioning','Central Air'],
+    ['Vitual Tour','Click to virtual tour site','999', 'http://www.google.com'],
+  ];
+
+  String description = "***Stunning Custom Built Home Situated On A Very Prime Lot; Walking Distance To Appleby College; Bright & Spacious Living Space; Walnut Custom Cabinetry& Mill Work;Plaster Mouldings,High Ceilings, Full Walnut Pallening Staircase, Glass Railings, Gourmet Kitchen,Natural Stone Fireplace, Theater Room, Wine Room, Steam Shower, Master Bathroom Heated Floor.Exercise Room Easy Acc To All Major Highways, Downtown Oakville&Pearson.";
+//  String address = "391 Sandhurst Dr, Oakville L6L4L1";
+  String address = "391 Sandhurst Dr";
+  String price = "2990000";
 
   @override
   Widget build(BuildContext context) {
@@ -77,22 +105,27 @@ class _HouseRecommDetailState extends State<HouseRecommDetail>
                       color: Colors.white,
                       fontSize: 12.0,
                     ),
-                    textAlign: TextAlign.left,),
-                  titlePadding: EdgeInsetsDirectional.only(start: 20, bottom: 100),
+                    textAlign: TextAlign.left,
+                  ),
+                  titlePadding:
+                      EdgeInsetsDirectional.only(start: 20, bottom: 100),
                   background: Image.network(
                     'https://58realty.so.house/media/Res/W4371817/W4371817-1.jpg',
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.cover,
                   )),
               bottom: TabBar(
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicator: BubbleTabIndicator(
-                    indicatorHeight: 25.0,
+                    indicatorHeight: 35.0,
                     indicatorColor: Colors.purple,
-                    tabBarIndicatorSize: TabBarIndicatorSize.tab
-                ),
+                    tabBarIndicatorSize: TabBarIndicatorSize.tab),
                 tabs: <Widget>[
-                  Tab(text: 'Gallery',),
-                  Tab(text: 'Detail',)
+                  Tab(
+                    child: Text('Gallery', style: TextStyle(fontSize: 20),),
+                  ),
+                  Tab(
+                    child: Text('Detail', style: TextStyle(fontSize: 20),),
+                  )
                 ],
                 controller: _tabController,
               ),
@@ -101,54 +134,12 @@ class _HouseRecommDetailState extends State<HouseRecommDetail>
         },
         body: TabBarView(
           children: <Widget>[
-            HouseGallery(this.imgs),
-            PageTwo(),
+            HouseGallery(this.imgs, this.address, this.price),
+            HouseDetail(this.features, this.description, this.address, this.price),
           ],
           controller: _tabController,
         ),
       ),
-    );
-  }
-}
-
-class PageTwo extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Image.network(
-              'https://58realty.so.house/media/Res/W4371817/W4371817-1.jpg',
-              fit: BoxFit.fitWidth),
-          Image.network(
-              'https://58realty.so.house/media/Res/W4371817/W4371817-2.jpg',
-              fit: BoxFit.fitWidth),
-          Image.network(
-              'https://58realty.so.house/media/Res/W4371817/W4371817-3.jpg',
-              fit: BoxFit.fitWidth),
-        ],
-      ),
-    );
-  }
-}
-
-class PageOne extends StatelessWidget {
-  List imgs;
-  PageOne(List imgs) {
-    this.imgs = imgs;
-  }
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: this.imgs.length,
-      itemExtent: 250.0,
-      itemBuilder: (context, index) => Container(
-            padding: EdgeInsets.all(10.0),
-            child: Container(
-                margin: EdgeInsets.only(left: 20.0, right: 20.0),
-                child: Image.network(this.imgs[index], fit: BoxFit.fitWidth)),
-          ),
     );
   }
 }

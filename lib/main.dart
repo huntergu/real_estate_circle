@@ -11,6 +11,7 @@ import 'package:real_estate_circle/pages/new_condo_recomm.dart';
 import 'package:real_estate_circle/pages/new_house_recomm.dart';
 import 'package:real_estate_circle/pages/real_estate_news.dart';
 import 'package:flutter/rendering.dart';
+import 'package:real_estate_circle/pages/real_estate_news_detail.dart';
 import 'package:real_estate_circle/pages/rec_feature.dart';
 import 'package:real_estate_circle/pages/teams.dart';
 
@@ -136,14 +137,32 @@ class RealEstateCircle extends StatelessWidget {
       // context is a child of the app.
       home: RealEstateCircleApp(),
       onGenerateRoute: (settings) {
-        if (settings.name == HouseRecommDetail.routeName) {
+        switch (settings.name) {
+          case NewsDetail.routeName:
+            final String url = settings.arguments;
+            return MaterialPageRoute(
+              builder: (context) {
+                return NewsDetail(url);
+              }
+            );
+            break;
+          case HouseRecommDetail.routeName:
+            final String id = settings.arguments;
+            return MaterialPageRoute(
+                builder: (context) {
+                  return HouseRecommDetail(id: id);
+                }
+            );
+            break;
+        }
+/*        if (settings.name == HouseRecommDetail.routeName) {
           final String id = settings.arguments;
           return MaterialPageRoute(
             builder: (context) {
               return HouseRecommDetail(id: id);
             }
           );
-        }
+        }*/
       },
       routes: <String, WidgetBuilder>{
 //        '/' : (context) => RealEstateCircleApp(),

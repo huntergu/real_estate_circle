@@ -29,12 +29,13 @@ dependencies:
   flutter_money_formatter: ^0.8.0
   bubble_tab_indicator: ^0.1.4
   google_maps_flutter: ^0.5.5
+  geolocator: ^5.0.1
+  url_launcher: ^5.0.3
+  flutter_webview_plugin: ^0.3.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  intl: ^0.15.8
-  intl_translation: ^0.17.2
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
 

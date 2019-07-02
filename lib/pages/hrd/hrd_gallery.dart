@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:real_estate_circle/localizations.dart';
-import 'package:real_estate_circle/utils/money_format.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:real_estate_circle/utils/number_format.dart';
+import 'package:real_estate_circle/widgets/google_map_address.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
 
 class HouseGallery extends StatelessWidget {
   List imgs;
-  HouseGallery(List imgs) {
+  String address;
+  String price;
+  HouseGallery(List imgs, String address, String price) {
     this.imgs = imgs;
+    this.address = address;
+    this.price = price;
   }
 
   @override
@@ -15,7 +20,7 @@ class HouseGallery extends StatelessWidget {
     MediaQuery.of(context).orientation == Orientation.landscape ? 1.5 : 1.5;
     double fs = MediaQuery.of(context).orientation == Orientation.landscape ? 15 : 20;
     int numberOfColumn = MediaQuery.of(context).orientation == Orientation.landscape ? 3 : 1;
-
+    List<String> values = [this.address, this.price];
     Widget gridSection = Flexible(
         fit: FlexFit.loose,
         flex: 0,
@@ -39,7 +44,7 @@ class HouseGallery extends StatelessWidget {
               SizedBox(height: 40.0),
               Center(
                 child: Text(
-                  "Listing Price: " +  MoneyFormat.formatMoney(2999000, 0),
+                  "Listing Price: " +  NumberFormatter.formatMoney(2999000, 0),
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.purple),
                 ),
               ),
@@ -68,7 +73,9 @@ class HouseGallery extends StatelessWidget {
             ],
           ),
         ),
-      )]
+      ),
+      GoogleMapAddress(values, new LatLng(0,0))
+      ]
     );
   }
 }

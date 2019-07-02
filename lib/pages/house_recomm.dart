@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/pages/house_recomm_detail.dart';
 import 'package:real_estate_circle/widgets/grid_list_img.dart';
-import 'package:real_estate_circle/utils/money_format.dart';
+import 'package:real_estate_circle/utils/number_format.dart';
 
 class HouseRecomm extends StatelessWidget {
   static const routeName = '/house';
@@ -86,7 +86,7 @@ List<GestureDetector> _generateGridItems(BuildContext context, List imgs, List p
               children: <Widget>[
                 GridListImg(imgs[i]),
                 SizedBox(height: 10.0),
-                Text(MoneyFormat.formatMoney(prices[i], 0), style: TextStyle(fontSize: 20, color: Colors.purple, fontWeight: FontWeight.bold),),
+                Text(NumberFormatter.formatMoney(prices[i], 0), style: TextStyle(fontSize: 20, color: Colors.purple, fontWeight: FontWeight.bold),),
                 SizedBox(height: 10.0),
                 Flexible(
                     fit: FlexFit.loose,
