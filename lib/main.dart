@@ -7,6 +7,8 @@ import 'package:real_estate_circle/pages/house_recomm.dart';
 import 'package:real_estate_circle/localizations.dart';
 import 'package:real_estate_circle/main_drawer.dart';
 import 'package:real_estate_circle/pages/house_recomm_detail.dart';
+import 'package:real_estate_circle/pages/magazin.dart';
+import 'package:real_estate_circle/pages/magazin_form.dart';
 import 'package:real_estate_circle/pages/new_condo_recomm.dart';
 import 'package:real_estate_circle/pages/new_house_recomm.dart';
 import 'package:real_estate_circle/pages/real_estate_news.dart';
@@ -107,6 +109,14 @@ class RealEstateCircleApp extends StatelessWidget {
                     ),
                   ]),
                 ),
+                SliverList(
+                  delegate: SliverChildListDelegate([
+                    Container(
+                      padding: EdgeInsets.all(10.0),
+                      child: Magazine(),
+                    ),
+                  ]),
+                ),
               ],
             ),
           ),
@@ -154,6 +164,13 @@ class RealEstateCircle extends StatelessWidget {
                 }
             );
             break;
+          case MagazineForm.routeName:
+            return MaterialPageRoute(
+                builder: (context) {
+                  return MagazineForm();
+                }
+            );
+            break;
         }
 /*        if (settings.name == HouseRecommDetail.routeName) {
           final String id = settings.arguments;
@@ -174,7 +191,7 @@ class RealEstateCircle extends StatelessWidget {
         '/team' : (context) => MainPage(Teams()),
         '/agent' : (context) => MainPage(Agents()),
         '/feature' : (context) => MainPage(RecFeatures()),
-        '/magazine' : (context) => MainPage(RecFeatures()),
+        '/magazine' : (context) => MainPage(Magazine()),
         '/setting' : (context) => MainPage(Settings()),
         '/help' : (context) => MainPage(Helps()),
       },

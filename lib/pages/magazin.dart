@@ -1,17 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:real_estate_circle/localizations.dart';
+import 'package:real_estate_circle/pages/magazin_form.dart';
 
 class Magazine extends StatelessWidget {
   static const routeName = '/magazine';
 
   @override
   Widget build(BuildContext context) {
-    double aspectRatio =
-        MediaQuery.of(context).orientation == Orientation.landscape ? 1.2 : 1.2;
-    double fs =
-        MediaQuery.of(context).orientation == Orientation.landscape ? 15 : 20;
-
     return Container(
       child: Center(
         child: Card(
@@ -24,103 +20,34 @@ class Magazine extends StatelessWidget {
                 SizedBox(height: 20.0),
                 Center(
                   child: Text(
-                    RecLocalizations.of(context).recFeature,
+                    RecLocalizations.of(context).magApply,
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
                 ),
                 SizedBox(height: 20.0),
                 Center(
                   child: Text(
-                    RecLocalizations.of(context).recSub,
+                    RecLocalizations.of(context).magApplySub,
                     style: TextStyle(fontSize: 20, color: Colors.black38),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                SizedBox(height: 40.0),
+                SizedBox(height: 20.0),
                 Center(
-                  child: Container(
-                    child: Row(
-                      children: <Widget>[
-                        Flexible(
-                          flex: 1,
-                          fit: FlexFit.loose,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              Icon(
-                                Icons.chat,
-                                size: 60,
-                                color: Colors.lightBlueAccent,
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Flexible(
-                                  fit: FlexFit.loose,
-                                  child: Text(
-                                    RecLocalizations.of(context).recF1,
-                                    style: TextStyle(fontSize: 20),
-                                    textAlign: TextAlign.center,
-                                  ))
-                            ],
-                          ),
-                        ),
-                        Flexible(
-                            flex: 1,
-                            fit: FlexFit.loose,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Icon(
-                                  Icons.verified_user,
-                                  size: 60,
-                                  color: Colors.green,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Flexible(
-                                    fit: FlexFit.loose,
-                                    child: Text(
-                                      RecLocalizations.of(context).recF2,
-                                      style: TextStyle(fontSize: 20),
-                                      textAlign: TextAlign.center,
-                                    ))
-                              ],
-                            )),
-                        Flexible(
-                            flex: 1,
-                            fit: FlexFit.loose,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Icon(
-                                  Icons.fingerprint,
-                                  size: 60,
-                                  color: Colors.red,
-                                ),
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Flexible(
-                                    fit: FlexFit.loose,
-                                    child: Text(
-                                      RecLocalizations.of(context).recF3,
-                                      style: TextStyle(fontSize: 20),
-                                      textAlign: TextAlign.center,
-                                    ))
-                              ],
-                            )),
-                      ],
+                  child: RaisedButton(
+                    child: Text(
+                      RecLocalizations.of(context).magApplyButton,
+                      style: TextStyle(color: Colors.white),
                     ),
-                  ),
-                ),
-                SizedBox(height: 40.0),
-                Center(
-                  child: Text(
-                    RecLocalizations.of(context).recDesc,
-                    style: TextStyle(fontSize: 20, color: Colors.black38),
-                    textAlign: TextAlign.center,
+                    color: Colors.purple,
+                    elevation: 4.0,
+                    splashColor: Colors.blueGrey,
+                    onPressed: () {
+                      Navigator.pushNamed(
+                        context,
+                        MagazineForm.routeName,
+                      );
+                    },
                   ),
                 ),
                 SizedBox(height: 60.0),
