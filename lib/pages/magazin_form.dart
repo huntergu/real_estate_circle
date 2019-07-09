@@ -8,9 +8,14 @@ class MagazineForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final _form = GlobalKey<FormState>();
+    var _initValues = {
+      'name' : '',
+      'address': '',
+      'mobile': '',
+      'email': ''
+    };
     return
-
-
       Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -54,33 +59,70 @@ class MagazineForm extends StatelessWidget {
                               Navigator.pushNamed(context, '/');
                             },),
                             Container(
-                              child: Text(
-                                RecLocalizations.of(context).magApply,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 25),
-                              ),
-                            ),
-                            SizedBox(height: 20.0),
-                            Center(
-                              child: Text(
-                                RecLocalizations.of(context).magApplySub,
-                                style: TextStyle(fontSize: 20, color: Colors.black38),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                            SizedBox(height: 20.0),
-                            Center(
-                              child: RaisedButton(
-                                child: Text(
-                                  RecLocalizations.of(context).magApplyButton,
-                                  style: TextStyle(color: Colors.white),
-                                ),
-                                color: Colors.purple,
-                                elevation: 4.0,
-                                splashColor: Colors.blueGrey,
-                                onPressed: () {
-                                  // Perform some action
-                                },
+                              child: Form(
+                                key: _form,
+                                  child: Column(
+                                    children: <Widget>[
+                                      TextFormField(
+                                        initialValue: _initValues['name'],
+                                        decoration: InputDecoration(prefixIcon: Padding(padding: EdgeInsets.all(0.0), child: Icon(Icons.face),), hintText: 'name...'),
+                                        validator: (value) {
+                                          if (value.isEmpty) {
+                                            return 'Please provide name.';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      TextFormField(
+                                        initialValue: _initValues['address'],
+                                        decoration: InputDecoration(prefixIcon: Padding(padding: EdgeInsets.all(0.0), child: Icon(Icons.directions),), hintText: 'address...'),
+                                        validator: (value) {
+                                          if (value.isEmpty) {
+                                            return 'Please provide address.';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      TextFormField(
+                                        initialValue: _initValues['Mobile'],
+                                        decoration: InputDecoration(prefixIcon: Padding(padding: EdgeInsets.all(0.0), child: Icon(Icons.phone),), hintText: 'mobile...'),
+                                        validator: (value) {
+                                          if (value.isEmpty) {
+                                            return 'Please provide mobile number.';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      TextFormField(
+                                        initialValue: _initValues['email'],
+                                        decoration: InputDecoration(prefixIcon: Padding(padding: EdgeInsets.all(0.0), child: Icon(Icons.email),), hintText: 'email...'),
+                                        validator: (value) {
+                                          if (value.isEmpty) {
+                                            return 'Please provide email.';
+                                          }
+                                          return null;
+                                        },
+                                      ),
+                                      SizedBox(height: 30,),
+                                      Center(
+                                        child: RaisedButton(
+                                          child: Text(
+                                            '发送登记表',
+                                            style: TextStyle(color: Colors.white),
+                                          ),
+                                          color: Colors.purple,
+                                          elevation: 4.0,
+                                          splashColor: Colors.blueGrey,
+                                          onPressed: () {
+                                            Navigator.pushNamed(
+                                              context,
+                                              MagazineForm.routeName,
+                                            );
+                                          },
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                               ),
                             ),
                             SizedBox(height: 60.0),
